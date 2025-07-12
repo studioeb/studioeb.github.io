@@ -44,6 +44,13 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>.
 /* Global Variables */
 :root {
   --sidebar-width: 17rem;
+
+  --heading-fonts: Arvo, Georgia, "Times New Roman", Times, serif;
+  --body-fonts: Lato, Helvetica, Arial, sans-serif;
+
+  --sidebar-text: hsl(205, 100%, 96%);
+  --sidebar-bg: hsl(210, 96%, 20%);
+  --dark-overlay: hsla(0, 0%, 0%, 0.3);
 }
 
 /* ---- Set defaults ---- */
@@ -51,15 +58,22 @@ h1,
 h2,
 h3,
 h4 {
-  font-family: "Arvo";
+  font-family: var(--heading-fonts);
+  font-weight: bold;
 }
 p,
 ul,
 address {
-  font-family: "Lato";
+  font-family: var(--body-fonts);
 }
 .italic {
   font-style: italic;
+}
+abbr {
+  text-decoration: none;
+}
+address {
+  font-style: normal;
 }
 
 /* ---- Sidebar ---- */
@@ -72,17 +86,19 @@ address {
 /* Make sidebar */
 .sidebar {
   position: fixed;
+  display: flex;
+  flex-flow: column;
   top: 0;
   left: 0;
   height: 100vh;
+  overflow: hidden auto;
   width: var(--sidebar-width);
+  align-items: center;
   text-align: center;
+  background-color: var(--sidebar-bg);
 }
-/* Position navbar at bottom */
 .sidebar nav {
-  position: absolute;
-  bottom: 0;
-  margin-bottom: 1.4rem;
+  /* Set width to sidebar width */
   width: var(--sidebar-width);
 }
 /* Put main area to the side of sidebar */
@@ -90,21 +106,38 @@ address {
   margin-left: calc(var(--sidebar-width) + 0.3rem);
   padding: 25px;
 }
-/* Set font styling */
 .sidebar ul {
-  font-family: "Arvo";
+  /* Set font styling */
+  font-family: var(--heading-fonts);
+  font-weight: bold;
   font-size: 1.6rem;
+  /* Make the list a flexbox */
+  display: flex;
+  flex-flow: column;
 }
 .sidebar h1 {
-  /* Set a small top margin for heading */
-  margin-top: 2.5rem;
+  /* Set a top margin for the heading */
+  margin: 2.2rem 0 0 0;
   font-size: 3.6rem;
   line-height: 3.8rem;
+  color: var(--sidebar-text);
 }
-/* Style buttons */
+.sidebar h1::after {
+  content: "";
+  display: block;
+  margin: 2rem auto;
+  width: 130px;
+  border: 1px solid var(--sidebar-text);
+  border-radius: 0.5px;
+}
+/* Button styling */
 .sidebar a {
   text-decoration: none;
   /* Make link take up space horizontally */
   display: block;
   padding: 0.6rem 0;
+  color: var(--sidebar-text);
+}
+.sidebar a:hover {
+  background-color: var(--dark-overlay);
 }
