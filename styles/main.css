@@ -86,15 +86,15 @@ address {
 }
 
 /* ---- Link Styling ---- */
-a {
+p a {
   color: var(--accent);
   text-decoration: none;
 }
-a:hover {
+p a:hover {
   color: var(--accent);
   text-decoration: underline;
 }
-a[class="external-link"]::after {
+p a[class="external-link"]::after {
   content: "";
   display: inline-block;
   background: url("../images/arrow-up-right-from-square.svg") no-repeat;
@@ -158,7 +158,7 @@ a[class="external-link"]::after {
 .sidebar .socials a {
   color: var(--light-text);
 }
-/* Button styling */
+/* Sidebar button styling */
 .sidebar nav a {
   text-decoration: none;
   /* Make link take up space horizontally */
@@ -230,4 +230,22 @@ main > section > section > article {
 
 #about-me p {
   font-size: 1.2rem;
+}
+
+/* ---- Content button styling ---- */
+.content-button {
+  display: block flex;
+  font-family: var(--body-fonts);
+  font-size: 1.1em;
+  background-color: var(--navy-bg);
+  text-decoration: none;
+  border-radius: 14px;
+  color: var(--light-text);
+  align-items: center;
+  justify-content: center;
+  max-width: 12rem;
+  min-height: 3rem;
+}
+.content-button:hover {
+  background-color: var(--accent);
 }
