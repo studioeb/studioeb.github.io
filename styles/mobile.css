@@ -1,0 +1,9 @@
+/* ---- Mobile Layout ---- */
+@media (max-width: 768px) {
+  .sidebar {
+    margin-left: calc(-1 * var(--sidebar-width));
+  }
+  .scrolling-content {
+    margin-left: 0;
+  }
+}
