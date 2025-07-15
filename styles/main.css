@@ -181,8 +181,14 @@ p a[class="external-link"]::after {
 .sidebar nav a:hover {
   background-color: var(--dark-overlay);
 }
+.sidebar nav a:active {
+  color: var(--light-text);
+}
 .sidebar .socials a:hover {
   color: var(--accent-dark);
+}
+.sidebar .socials a:active {
+  color: var(--light-text);
 }
 
 /* ---- Text Styling ---- */
