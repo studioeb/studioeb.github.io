@@ -46,6 +46,7 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>.
 /* Global Variables */
 :root {
   --sidebar-width: 280px;
+  --mobile-header-height: 55px;
 
   --heading-fonts: Arvo, Georgia, "Times New Roman", Times, serif;
   --body-fonts: Lato, Helvetica, Arial, sans-serif;
@@ -111,6 +112,43 @@ p a[class="external-link"]::after {
 main {
   padding: 1.4rem;
 }
+h4 {
+  margin-bottom: 0.4rem;
+}
+h4 + p {
+  margin-top: 0;
+}
+/* Make headings bigger */
+h2 {
+  font-size: 2.2rem;
+}
+h3 {
+  font-size: 1.5rem;
+}
+article {
+  /* Add a bottom margin to all articles */
+  margin-bottom: 2.5rem;
+}
+
+/* ---- Button styling in main content section ---- */
+.content-button {
+  display: block flex;
+  font-family: var(--body-fonts);
+  font-size: 1.1em;
+  background-color: var(--navy);
+  text-decoration: none;
+  border-radius: 14px;
+  color: var(--light-text);
+  align-items: center;
+  justify-content: center;
+  max-width: 12rem;
+  min-height: 3rem;
+}
+.content-button:hover {
+  background-color: var(--accent);
+}
+
+/* ---- Footer ---- */
 footer {
   background-color: var(--light-bg);
   /* Add a bit of padding to copyright */
@@ -129,43 +167,4 @@ footer > p:last-child {
 footer > p:first-child {
   /* Remove the default top margin on the first p in footer */
   margin-top: 0;
-}
-h4 {
-  margin-bottom: 0.4rem;
-}
-h4 + p {
-  margin-top: 0;
-}
-/* Make headings bigger */
-h2 {
-  font-size: 2.2rem;
-}
-h3 {
-  font-size: 1.5rem;
-}
-main > section > section > article {
-  /* Add a bottom margin to all h4 sections */
-  margin-bottom: 2.5rem;
-}
-
-#about-me p {
-  font-size: 1.2rem;
-}
-
-/* ---- Content button styling ---- */
-.content-button {
-  display: block flex;
-  font-family: var(--body-fonts);
-  font-size: 1.1em;
-  background-color: var(--navy);
-  text-decoration: none;
-  border-radius: 14px;
-  color: var(--light-text);
-  align-items: center;
-  justify-content: center;
-  max-width: 12rem;
-  min-height: 3rem;
-}
-.content-button:hover {
-  background-color: var(--accent);
 }
