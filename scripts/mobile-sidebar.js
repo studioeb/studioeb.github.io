@@ -49,7 +49,7 @@ function openCloseMenu() {
   console.log("choose");
 }
 
-function switchHeaderAccessibility() {
+function switchHeader() {
   if (window.innerWidth <= 768) {
     /* Enable mobile header */
     headerMobile.ariaHidden = "false";
@@ -60,6 +60,10 @@ function switchHeaderAccessibility() {
     /* Disable sidebar */
     sidebar.ariaHidden = "true";
     sidebar.inert = true;
+
+    document
+      .getElementById("nav-list")
+      .addEventListener("click", openCloseMenu);
   } else if (window.innerWidth > 768) {
     /* Disable mobile header */
     headerMobile.ariaHidden = "true";
@@ -73,5 +77,7 @@ function switchHeaderAccessibility() {
   }
 }
 
-window.addEventListener("resize", switchHeaderAccessibility);
-switchHeaderAccessibility();
+window.addEventListener("resize", switchHeader);
+
+/* Run on page load */
+switchHeader();
