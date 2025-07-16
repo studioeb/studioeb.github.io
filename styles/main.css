@@ -57,6 +57,7 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
   --accent-dark: hsl(0, 44%, 40%);
   --dark-overlay: hsla(0, 0%, 0%, 0.34);
+  --navy-transparent: hsla(210, 98%, 16%, 0.96);
 
   --light-text: hsl(205, 100%, 96%);
   --light-bg: hsl(211, 18%, 46%);
@@ -73,6 +74,9 @@ h4 {
   color: var(--navy);
   font-family: var(--heading-fonts);
   font-weight: bold;
+}
+h1 {
+  margin: 0;
 }
 p,
 ul,
@@ -109,9 +113,6 @@ p a[class="external-link"]::after {
 }
 
 /* ---- Text Styling ---- */
-main {
-  padding: 1.4rem;
-}
 h4 {
   margin-bottom: 0.4rem;
 }
@@ -128,6 +129,9 @@ h3 {
 article {
   /* Add a bottom margin to all articles */
   margin-bottom: 2.5rem;
+}
+main {
+  padding: 0.4rem 1.2rem;
 }
 
 /* ---- Button styling in main content section ---- */
@@ -150,7 +154,7 @@ article {
 
 /* ---- Footer ---- */
 footer {
-  background-color: var(--light-bg);
+  background-color: var(--navy);
   /* Add a bit of padding to copyright */
   padding: 0.4rem 1rem;
 }

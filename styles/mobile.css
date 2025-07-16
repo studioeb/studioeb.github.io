@@ -20,56 +20,64 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 /* ---- Mobile Layout ---- */
 
-.menu-button svg {
+#header-mobile {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  z-index: 1; /* Show above other content */
+  background: var(--navy);
+  height: var(--mobile-header-height);
+}
+#header-mobile svg {
+  width: 80px;
+  color: var(--accent);
+}
+#menu-button svg {
   width: calc(var(--mobile-header-height) - 15px);
   height: calc(var(--mobile-header-height) - 15px);
   color: var(--accent);
 }
-.menu-button {
+#menu-button {
   border: 0px;
   background-color: transparent;
+  position: absolute;
+  left: 0;
 }
-.menu-button svg:hover {
+#menu-button svg:hover {
   color: var(--accent-dark);
 }
-.menu-button svg:active {
+#menu-button svg:active {
   color: var(--light-text);
 }
-@media (min-width: 768px) {
-  .menu-button {
+
+@media (min-width: 769px) {
+  #header-mobile {
     display: none;
   }
-}
-@media (max-width: 768px) {
-  .sidebar {
-    margin-left: calc(-1 * var(--sidebar-width));
-  }
-  .scrolling-content {
+  /*
+  #sidebar {
     margin-left: 0;
   }
-  .sidebar nav {
+  */
+}
+@media (max-width: 768px) {
+  #header-desktop {
+    display: none;
+  }
+  #sidebar {
+    margin-left: calc(-1 * var(--sidebar-width));
+    top: var(--mobile-header-height);
+    border-top: 1px solid hsl(206, 7%, 39%);
+    background: var(--navy-transparent);
+  }
+  #sidebar ul {
     margin-top: 1.2rem;
   }
-  .logo {
-    width: 80px;
-  }
-  .menu-button {
-    position: absolute;
-    left: 5px;
-  }
-  .sidebar header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0;
-    z-index: 1;
-    background: var(--navy);
-    width: 100vw;
-  }
-  .scrolling-content {
+  #scrolling-content {
+    margin-left: 0;
     margin-top: var(--mobile-header-height);
   }
 }
