@@ -18,25 +18,8 @@ You should have received a copy of the GNU General Public License
 along with this program.  If not, see <https://www.gnu.org/licenses/>.
 */
 
-let menuOpened = false;
 const sidebar = document.getElementById("sidebar");
 
 function openCloseMenu() {
-  if (menuOpened) {
-    closeMenu();
-    menuOpened = false;
-  } else if (!menuOpened) {
-    openMenu();
-    menuOpened = true;
-  }
-}
-
-function openMenu() {
-  sidebar.style.marginLeft = "0";
-}
-
-function closeMenu() {
-  sidebar.style.marginLeft =
-    "-" +
-    window.getComputedStyle(document.body).getPropertyValue("--sidebar-width");
+  sidebar.classList.toggle("sidebar-opened");
 }

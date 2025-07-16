@@ -103,7 +103,7 @@ p a:hover {
   color: var(--accent);
   text-decoration: underline;
 }
-p a[class="external-link"]::after {
+p a.external-link::after {
   content: "";
   display: inline-block;
   background: url("../images/arrow-up-right-from-square.svg") no-repeat;
