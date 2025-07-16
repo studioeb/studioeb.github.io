@@ -99,7 +99,7 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>.
   #sidebar {
     width: var(--sidebar-width);
     background-color: var(--navy);
-    margin-left: 0;
+    left: 0;
   }
   #scrolling-content {
     /* Put main area to the side of sidebar */
@@ -130,8 +130,12 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 /* Class to handle sidebar styling with JS
 ID is used here to increase specificity */
+
 #sidebar.sidebar-opened {
-  margin-left: 0;
+  left: 0;
+}
+#sidebar.sidebar-animated {
+  transition: left 0.4s;
 }
 @media (max-width: 768px) {
   #header-desktop {
@@ -142,14 +146,10 @@ ID is used here to increase specificity */
     top: var(--mobile-header-height);
     border-top: 1px solid hsl(206, 7%, 39%);
     background: var(--navy-transparent);
-    margin-left: -100vw;
+    left: -100vw;
   }
   #sidebar ul {
     margin-top: 1.2rem;
-  }
-  #scrolling-content {
-    margin-left: 0;
-    margin-top: var(--mobile-header-height);
   }
   #header-mobile {
     display: flex;
@@ -162,14 +162,21 @@ ID is used here to increase specificity */
     background: var(--navy);
     height: var(--mobile-header-height);
   }
-  #header-mobile svg {
+  #header-mobile h1 svg {
     width: 80px;
     color: var(--accent);
   }
   #menu-button svg {
+    color: var(--accent);
+  }
+  #menu-icon {
     width: calc(var(--mobile-header-height) - 15px);
     height: calc(var(--mobile-header-height) - 15px);
-    color: var(--accent);
+  }
+  #x-icon {
+    display: none;
+    width: calc(var(--mobile-header-height) - 15px);
+    height: calc(var(--mobile-header-height) - 5px);
   }
   #menu-button {
     border: 0px;
@@ -182,5 +189,13 @@ ID is used here to increase specificity */
   }
   #menu-button svg:active {
     color: var(--light-text);
+  }
+
+  #scrolling-content {
+    margin-top: calc(var(--mobile-header-height) + 15px);
+  }
+  section,
+  article {
+    scroll-margin-top: calc(var(--mobile-header-height) + 10px);
   }
 }
