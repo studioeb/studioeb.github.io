@@ -60,13 +60,13 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>.
   --navy-transparent: hsla(210, 98%, 16%, 0.96);
 
   --light-text: hsl(205, 100%, 96%);
-  --light-bg: hsl(211, 18%, 46%);
 
   scroll-behavior: smooth; /* Here for specificity's sake */
 }
 
 /* ---- Set defaults ---- */
 body {
+  text-align: center;
   margin: 0;
 }
 h1,
@@ -113,13 +113,6 @@ p a.external-link::after {
   margin-left: 0.25rem;
 }
 
-/* ---- Text Styling ---- */
-h4 {
-  margin-bottom: 0.4rem;
-}
-h4 + p {
-  margin-top: 0;
-}
 /* Make headings bigger */
 h2 {
   font-size: 2.2rem;
@@ -128,30 +121,16 @@ h2 {
 h3 {
   font-size: 1.5rem;
 }
-article {
-  /* Add a bottom margin to all articles */
-  margin-bottom: 2.5rem;
-}
-
-/* ---- Button styling in main content section ---- */
-.content-button {
-  display: block flex;
-  font-family: var(--body-fonts);
-  font-size: 1.1em;
-  background-color: var(--navy);
-  text-decoration: none;
-  border-radius: 14px;
-  color: var(--light-text);
-  align-items: center;
-  justify-content: center;
-  max-width: 12rem;
-  min-height: 3rem;
-}
-.content-button:hover {
-  background-color: var(--accent);
-}
 
 /* ---- Footer ---- */
+.scrolling-content {
+  display: flex;
+  flex-flow: column;
+  min-height: 100vh;
+}
+main {
+  flex: 1; /* Pushes footer to bottom */
+}
 footer {
   background-color: var(--navy);
   /* Add a bit of padding to copyright */
@@ -159,7 +138,6 @@ footer {
 }
 footer > p {
   /* Set font styling for footer paragraphs */
-  text-align: center;
   color: var(--light-text);
   font-size: 0.7rem;
 }
@@ -174,4 +152,28 @@ footer > p:first-child {
 
 main {
   padding: 0 1rem;
+}
+
+/* Main Page Portfolio */
+.portfolio-grid {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-flow: row wrap;
+}
+.portfolio-grid article {
+  width: 250px;
+  min-height: 180px;
+  padding: 10px;
+  border: 1px solid black;
+  border-radius: 15px;
+}
+.portfolio-grid article h4 {
+  margin: 0; /* Cut default margin */
+}
+.portfolio-grid article p {
+  margin: 0; /* Cut default margin */
+}
+.portfolio-grid img {
+  border-radius: 15px;
 }

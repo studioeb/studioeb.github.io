@@ -85,15 +85,16 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
   <body>
     <!-- Mobile Header -->
-    <header id="header-mobile" aria-hidden="false">
+    <header id="header-mobile" class="header-mobile" aria-hidden="false">
       <button
         onclick="openCloseMenu()"
         type="button"
-        id="menu-button"
+        class="menu-button"
         aria-label="Menu"
       >
         <svg
           id="menu-icon"
+          class="menu-button-icon"
           aria-hidden="true"
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 448 512"
@@ -106,6 +107,7 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>.
         </svg>
         <svg
           id="x-icon"
+          class="x-icon menu-button-icon"
           aria-hidden="true"
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 384 512"
@@ -173,8 +175,13 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>.
     </header>
 
     <!-- Desktop Header -->
-    <div id="sidebar" aria-hidden="true" inert>
-      <header id="header-desktop" aria-hidden="true" inert>
+    <div id="sidebar" class="sidebar" aria-hidden="true" inert>
+      <header
+        id="header-desktop"
+        class="header-desktop"
+        aria-hidden="true"
+        inert
+      >
         <h1>
           <a href="">
             <svg
@@ -239,7 +246,7 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>.
         </ul>
       </nav>
 
-      <div id="socials">
+      <div class="socials">
         <a
           title="Email"
           target="_blank"
@@ -306,178 +313,180 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>.
       </div>
     </div>
 
-    <div id="scrolling-content">
+    <div class="scrolling-content">
       <main>
-        <section id="about-me">
-          <h2>About Me</h2>
-          <p>
-            Hi, I'm Ethan Bayer. I'm a developer and independent musician
-            interested in technology of all sorts as well as songwriting and
-            music production. Check out my portfolio below!
-          </p>
-        </section>
-
         <section>
           <h2>Portfolio</h2>
 
           <section id="music">
             <h3>Music</h3>
 
-            <article>
-              <h4>Castle On The Hill</h4>
-              <p>
-                I covered
-                <a
-                  class="external-link"
-                  target="_blank"
-                  rel="noopener"
-                  href="https://www.edsheeran.com"
-                  >Ed Sheeran's</a
-                >
-                song "Castle on the Hill" and released it as part of Grey
-                Warren's album
-                <a
-                  class="external-link"
-                  target="_blank"
-                  rel="noopener"
-                  href="https://linktr.ee/thesongsweleavebehind"
-                  ><span class="italic">The Songs We Leave Behind</span></a
-                >. I sang and played guitar for the song, as well as helping
-                produce it.
-              </p>
-              <iframe
-                title="Castle on the Hill by Ethan Bayer on Spotify"
-                src="https://open.spotify.com/embed/track/31JWpNe9bWB4ZHVZvNkBZQ?utm_source=generator&theme=0"
-                width="100%"
-                height="152"
-                frameborder="0"
-                allowfullscreen=""
-                allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-                loading="lazy"
-              ></iframe>
-            </article>
+            <div class="portfolio-grid">
+              <article>
+                <h4>Castle On The Hill</h4>
+                <img
+                  srcset="
+                    images/portfolio/album-cover-1x.jpg 1x,
+                    images/portfolio/album-cover-2x.jpg 2x
+                  "
+                  src="images/portfolio/album-cover-1x.jpg"
+                  alt="Album cover for The Songs We Leave Behind — a flaming treble clef."
+                  width="250"
+                  height="180"
+                />
+                <p>
+                  I covered Ed Sheeran's song "Castle on the Hill" and released
+                  it as part of Grey Warren's album
+                  <a
+                    class="external-link"
+                    target="_blank"
+                    rel="noopener"
+                    href="https://linktr.ee/thesongsweleavebehind"
+                    ><span class="italic">The Songs We Leave Behind</span></a
+                  >. I sang and played guitar for the song, as well as helping
+                  produce it.
+                </p>
+              </article>
 
-            <article>
-              <h4>Performance</h4>
+              <article>
+                <h4>Performance</h4>
 
-              <p>
-                I have played guitar for over nine years, and I have performed
-                various times.
-              </p>
-            </article>
+                <p>
+                  I have played guitar for over nine years, and I have performed
+                  various times.
+                </p>
+              </article>
+            </div>
           </section>
 
           <section id="technology">
             <h3>Technology</h3>
 
-            <article>
-              <h4>Conditional Switch</h4>
-              <p>
-                Conditional Switch is a video game made using the Unity game
-                engine as well as C# for scripting. You can play it in your
-                browser or download the game for Windows and MacOS.
-              </p>
-              <a
-                class="content-button"
-                target="_blank"
-                rel="noopener"
-                href="https://studioeb.itch.io/conditional-switch"
-                >Play the Game</a
-              >
-            </article>
-
-            <article>
-              <h4>Personal Website</h4>
-              <p>
-                I made this website, my personal portfolio, from scratch with
-                <abbr title="HyperText Markup Language">HTML</abbr> and
-                <abbr title="Cascading Style Sheets">CSS</abbr>, which I learned
-                over the course of a month thanks to the
+            <div class="portfolio-grid">
+              <article>
+                <h4>Conditional Switch</h4>
+                <img
+                  src="images/portfolio/conditional-switch.svg"
+                  alt="A mockup of the game, including the player, saws, and octagons with question marks in them."
+                  width="250"
+                  height="180"
+                />
+                <p>
+                  Conditional Switch is a video game made using the Unity game
+                  engine as well as C# for scripting. You can play it in your
+                  browser or download the game for Windows and MacOS.
+                </p>
                 <a
-                  class="external-link"
+                  class="content-button"
                   target="_blank"
                   rel="noopener"
-                  href="https://developer.mozilla.org"
-                  >MDN Web Docs</a
-                >.
-              </p>
-            </article>
+                  href="https://studioeb.itch.io/conditional-switch"
+                  >Play the Game</a
+                >
+              </article>
 
-            <article>
-              <h4>AutoCompressors</h4>
-              <p>
-                AutoCompressors is a Spigot plugin for the video game Minecraft,
-                adding new functionality in the form of easily customizable
-                items that, when in your inventory, can automatically convert
-                specific items into other ones.
-              </p>
-              <a
-                class="content-button"
-                target="_blank"
-                rel="noopener"
-                href="https://github.com/studioeb/AutoCompressors"
-                >View the Project</a
-              >
-            </article>
+              <article>
+                <h4>Personal Website</h4>
+                <p>
+                  I made this website, my personal portfolio, from scratch with
+                  <abbr title="HyperText Markup Language">HTML</abbr> and
+                  <abbr title="Cascading Style Sheets">CSS</abbr>, which I
+                  learned over the course of a month thanks to the
+                  <a
+                    class="external-link"
+                    target="_blank"
+                    rel="noopener"
+                    href="https://developer.mozilla.org"
+                    >MDN Web Docs</a
+                  >.
+                </p>
+              </article>
 
-            <article id="ender-3">
-              <h4>Ender-3</h4>
-              <p>
-                Over the course of a few years, I have heavily modified what
-                originally was a Creality Ender-3 3D printer with both
-                modifications developed by the incredible community around this
-                printer as well as some of my own ideas and designs.
-              </p>
-            </article>
-
-            <article>
-              <h4>3D Design</h4>
-              <p>
-                So far, I have designed and published six simple and useful 3D
-                models to solve problems I had. I used Fusion for the designs
-                and 3D printed them on my <a href="#ender-3">Ender-3</a>.
-              </p>
-              <a
-                class="content-button"
-                target="_blank"
-                rel="noopener"
-                href="https://www.printables.com/@Soundwave3D_1840657"
-                >View Profile</a
-              >
-            </article>
-
-            <article>
-              <h4>Calculator Pong</h4>
-              <p>
-                I made a simple clone of Pong coded in TI-Basic for the TI-84
-                Plus <abbr title="Color Edition">CE</abbr> calculator.
-              </p>
-              <a
-                class="content-button"
-                target="_blank"
-                rel="noopener"
-                href="https://github.com/studioeb/CE-Pong"
-                >View the Project</a
-              >
-            </article>
-
-            <article>
-              <h4>Other</h4>
-              <p>
-                I also program in Python for small projects, and I have
-                experience with Git (both through graphical tools and the
-                command line), the Linux and MacOS shells, and the router
-                software
+              <article>
+                <h4>AutoCompressors</h4>
+                <p>
+                  AutoCompressors is a Spigot plugin for the video game
+                  Minecraft, adding new functionality in the form of easily
+                  customizable items that, when in your inventory, can
+                  automatically convert specific items into other ones.
+                </p>
                 <a
-                  class="external-link"
+                  class="content-button"
                   target="_blank"
                   rel="noopener"
-                  href="https://openwrt.org"
-                  >OpenWRT</a
-                >.
-              </p>
-            </article>
+                  href="https://github.com/studioeb/AutoCompressors"
+                  >View the Project</a
+                >
+              </article>
+
+              <article id="ender-3">
+                <h4>Ender-3</h4>
+                <p>
+                  Over the course of a few years, I have heavily modified what
+                  originally was a Creality Ender-3 3D printer with both
+                  modifications developed by the incredible community around
+                  this printer as well as some of my own ideas and designs.
+                </p>
+              </article>
+
+              <article>
+                <h4>3D Design</h4>
+                <p>
+                  So far, I have designed and published six simple and useful 3D
+                  models to solve problems I had. I used Fusion for the designs
+                  and 3D printed them on my <a href="#ender-3">Ender-3</a>.
+                </p>
+                <a
+                  class="content-button"
+                  target="_blank"
+                  rel="noopener"
+                  href="https://www.printables.com/@Soundwave3D_1840657"
+                  >View Profile</a
+                >
+              </article>
+
+              <article>
+                <h4>Calculator Pong</h4>
+                <p>
+                  I made a simple clone of Pong coded in TI-Basic for the TI-84
+                  Plus <abbr title="Color Edition">CE</abbr> calculator.
+                </p>
+                <a
+                  class="content-button"
+                  target="_blank"
+                  rel="noopener"
+                  href="https://github.com/studioeb/CE-Pong"
+                  >View the Project</a
+                >
+              </article>
+
+              <article>
+                <h4>Other</h4>
+                <p>
+                  I also program in Python for small projects, and I have
+                  experience with Git (both through graphical tools and the
+                  command line), the Linux and MacOS shells, and the router
+                  software
+                  <a
+                    class="external-link"
+                    target="_blank"
+                    rel="noopener"
+                    href="https://openwrt.org"
+                    >OpenWRT</a
+                  >.
+                </p>
+              </article>
+            </div>
           </section>
+        </section>
+
+        <section id="about-me">
+          <h2>About Me</h2>
+          <p>
+            Hi, I'm Ethan Bayer. I'm a developer and independent musician
+            interested in technology of all sorts as well as songwriting and
+            music production.
+          </p>
         </section>
       </main>
 

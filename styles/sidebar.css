@@ -22,7 +22,7 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 /* ---- Overall Styling ---- */
 /* Make sidebar */
-#sidebar {
+.sidebar {
   display: flex;
   flex-flow: column;
   position: fixed;
@@ -31,9 +31,8 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>.
   overflow: auto;
   z-index: 1; /* Keep sidebar on top of content */
   align-items: stretch;
-  text-align: center;
 }
-#sidebar ul {
+.sidebar ul {
   /* Set font styling */
   font-family: var(--heading-fonts);
   font-weight: bold;
@@ -42,11 +41,11 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>.
   display: flex;
   flex-flow: column;
 }
-#sidebar h1 {
+.sidebar h1 {
   /* Reset default h1 margins */
   margin: 0;
 }
-#sidebar ul {
+.sidebar ul {
   /* Undo default browser styling for list */
   list-style: none;
   padding: 0;
@@ -54,7 +53,7 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>.
 }
 
 /* Socials List */
-#socials {
+.socials {
   display: flex;
   flex-flow: wrap;
   margin: auto 0.8rem 2rem 0.8rem;
@@ -62,59 +61,59 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>.
   justify-content: center;
   gap: 1.3rem;
 }
-#socials a {
+.socials a {
   color: var(--accent);
   width: 40px;
   height: 40px;
 }
 
 /* Sidebar button styling */
-#sidebar nav a {
+.sidebar nav a {
   text-decoration: none;
   /* Make link take up space horizontally */
   display: block;
   padding: 0.6rem 0;
   color: var(--accent);
 }
-#sidebar nav a:hover {
+.sidebar nav a:hover {
   background-color: var(--dark-overlay);
 }
-#sidebar nav a:active {
+.sidebar nav a:active {
   color: var(--light-text);
 }
-#socials a:hover {
+.socials a:hover {
   color: var(--accent-dark);
 }
-#socials a:active {
+.socials a:active {
   color: var(--light-text);
 }
 
 /* ---- Desktop Version ---- */
 @media (min-width: 769px) {
-  #header-mobile {
+  .header-mobile {
     display: none;
   }
-  #sidebar {
+  .sidebar {
     width: var(--sidebar-width);
     background-color: var(--navy);
     left: 0;
   }
-  #scrolling-content {
+  .scrolling-content {
     /* Put main area to the side of sidebar */
     margin-left: var(--sidebar-width);
   }
-  #header-desktop {
+  .header-desktop {
     margin-top: 2.2rem;
   }
-  #header-desktop a {
+  .header-desktop a {
     display: block;
     text-decoration: none;
   }
-  #header-desktop svg {
+  .header-desktop svg {
     color: var(--accent);
     width: 210px;
   }
-  #header-desktop::after {
+  .header-desktop::after {
     content: "";
     display: block;
     margin: 1.2rem auto;
@@ -129,27 +128,27 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>.
 /* Class to handle sidebar styling with JS
 ID is used here to increase specificity */
 
-#sidebar.sidebar-opened {
+.sidebar.sidebar-opened {
   left: 0;
 }
-#sidebar.sidebar-animated {
+.sidebar.sidebar-animated {
   transition: left 0.3s;
 }
 @media (max-width: 768px) {
-  #header-desktop {
+  .header-desktop {
     display: none;
   }
-  #sidebar {
+  .sidebar {
     width: 100vw;
     top: var(--mobile-header-height);
-    border-top: 1px solid hsl(206, 7%, 39%);
+    border-top: 1px solid hsl(220, 36%, 35%);
     background: var(--navy-transparent);
     left: -100vw;
   }
-  #sidebar ul {
+  .sidebar ul {
     margin-top: 1.2rem;
   }
-  #header-mobile {
+  .header-mobile {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -160,36 +159,34 @@ ID is used here to increase specificity */
     background: var(--navy);
     height: var(--mobile-header-height);
   }
-  #header-mobile h1 svg {
+  .header-mobile h1 svg {
     width: 80px;
     color: var(--accent);
   }
-  #menu-button svg {
+  .menu-button svg {
     color: var(--accent);
   }
-  #menu-icon {
+  .menu-button-icon {
     width: calc(var(--mobile-header-height) - 15px);
     height: calc(var(--mobile-header-height) - 15px);
   }
-  #x-icon {
+  .x-icon {
     display: none;
-    width: calc(var(--mobile-header-height) - 15px);
-    height: calc(var(--mobile-header-height) - 5px);
   }
-  #menu-button {
+  .menu-button {
     border: 0px;
     background-color: transparent;
     position: absolute;
     left: 0;
   }
-  #menu-button svg:hover {
+  .menu-button svg:hover {
     color: var(--accent-dark);
   }
-  #menu-button svg:active {
+  .menu-button svg:active {
     color: var(--light-text);
   }
 
-  #scrolling-content {
+  .scrolling-content {
     margin-top: calc(var(--mobile-header-height) + 15px);
   }
   section,
