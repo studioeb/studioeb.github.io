@@ -53,9 +53,9 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
   /* Theme Colors */
   --navy: hsl(210, 98%, 16%);
-  --accent: hsl(0, 60%, 58%);
+  --accent: hsl(0, 100%, 70%);
 
-  --accent-dark: hsl(0, 44%, 40%);
+  --accent-dark: hsl(0, 44%, 50%);
   --dark-overlay: hsla(0, 0%, 0%, 0.34);
   --navy-transparent: hsla(210, 98%, 16%, 0.96);
 
@@ -98,11 +98,10 @@ address {
 
 /* ---- Link Styling ---- */
 p a {
-  color: var(--accent);
+  color: var(--accent-dark);
   text-decoration: none;
 }
 p a:hover {
-  color: var(--accent);
   text-decoration: underline;
 }
 p a.external-link::after {
