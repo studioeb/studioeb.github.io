@@ -54,18 +54,22 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>.
   /* Theme Colors */
   --navy: hsl(210, 98%, 16%);
   --accent: hsl(0, 100%, 70%);
+  --white: hsl(219, 37%, 93%);
 
-  --accent-dark: hsl(0, 44%, 50%);
-  --dark-overlay: hsla(0, 0%, 0%, 0.34);
-  --navy-transparent: hsla(210, 98%, 16%, 0.96);
+  --navy-dark: hsl(208, 100%, 11%);
+  --navy-medium: hsl(210, 100%, 18%);
+  --navy-light: hsl(210, 78%, 27%);
+  --navy-dark-transparent: hsla(210, 98%, 11%, 0.94);
 
-  --light-text: hsl(205, 100%, 96%);
+  --accent-medium: hsl(0, 66%, 61%);
+  --accent-dark: hsl(0, 44%, 38%);
 
   scroll-behavior: smooth; /* Here for specificity's sake */
 }
 
 /* ---- Set defaults ---- */
 body {
+  background: var(--navy-medium);
   text-align: center;
   margin: 0;
 }
@@ -73,7 +77,7 @@ h1,
 h2,
 h3,
 h4 {
-  color: var(--navy);
+  color: var(--white);
   font-family: var(--heading-fonts);
   font-weight: bold;
 }
@@ -81,36 +85,15 @@ h1 {
   margin: 0;
 }
 p,
-ul,
-address {
+ul {
+  color: var(--white);
   font-family: var(--body-fonts);
-  color: var(--navy);
 }
 .italic {
   font-style: italic;
 }
 abbr {
   text-decoration: none;
-}
-address {
-  font-style: normal;
-}
-
-/* ---- Link Styling ---- */
-p a {
-  color: var(--accent-dark);
-  text-decoration: none;
-}
-p a:hover {
-  text-decoration: underline;
-}
-p a.external-link::after {
-  content: "";
-  display: inline-block;
-  background: url("../images/arrow-up-right-from-square.svg") no-repeat;
-  width: 0.62rem;
-  height: 0.62rem;
-  margin-left: 0.25rem;
 }
 
 /* Make headings bigger */
@@ -128,17 +111,14 @@ h3 {
   flex-flow: column;
   min-height: 100vh;
 }
-main {
-  flex: 1; /* Pushes footer to bottom */
-}
 footer {
-  background-color: var(--navy);
+  background-color: var(--navy-dark);
   /* Add a bit of padding to copyright */
   padding: 0.4rem 1rem;
 }
 footer > p {
   /* Set font styling for footer paragraphs */
-  color: var(--light-text);
+  color: var(--white);
   font-size: 0.7rem;
 }
 footer > p:last-child {
@@ -151,7 +131,9 @@ footer > p:first-child {
 }
 
 main {
+  flex: 1; /* Pushes footer to bottom */
   padding: 0 1rem;
+  margin-bottom: 3rem;
 }
 
 /* Main Page Portfolio */
@@ -165,15 +147,15 @@ main {
   width: 250px;
   min-height: 180px;
   padding: 10px;
-  border: 1px solid black;
+  background: linear-gradient(var(--navy-light), var(--navy));
+  border: 1.5px solid var(--navy);
   border-radius: 15px;
+  box-shadow: hsla(0, 0%, 0%, 0.2) 0 1px 3px, hsla(0, 0%, 0%, 0.16) 0 8px 8px;
 }
+.portfolio-grid article p,
 .portfolio-grid article h4 {
   margin: 0; /* Cut default margin */
 }
-.portfolio-grid article p {
-  margin: 0; /* Cut default margin */
-}
 .portfolio-grid img {
-  border-radius: 15px;
+  border-radius: 12px;
 }
