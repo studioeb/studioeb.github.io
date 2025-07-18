@@ -64,7 +64,7 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>.
   display: flex;
   flex-flow: wrap;
   justify-content: center;
-  gap: 1.2rem;
+  gap: 18px;
 }
 .socials a {
   color: var(--white);
@@ -112,6 +112,7 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>.
     width: var(--sidebar-width);
     background: var(--navy-dark);
     left: 0;
+    box-shadow: var(--navy-dark) 0 0 8px;
   }
   .scrolling-content {
     /* Put main area to the side of sidebar */
@@ -193,7 +194,7 @@ ID is used here to increase specificity */
   }
 
   .scrolling-content {
-    margin-top: calc(var(--mobile-header-height) + 15px);
+    margin-top: var(--mobile-header-height);
   }
   section,
   article {
