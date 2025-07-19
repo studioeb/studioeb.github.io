@@ -55,6 +55,7 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>.
   --navy: hsl(210, 98%, 16%);
   --accent: hsl(0, 100%, 70%);
   --white: hsl(210, 100%, 97%);
+  --light-gray: hsl(209, 14%, 68%);
 
   --navy-dark: hsl(208, 100%, 10%);
   --navy-medium: hsl(210, 100%, 18%);
@@ -146,6 +147,7 @@ main section {
   flex-flow: row wrap;
 }
 .portfolio-grid article {
+  position: relative;
   width: 250px;
   min-height: 180px;
   padding: 18px;
@@ -169,6 +171,44 @@ main section {
 .portfolio-grid img {
   border-radius: 20px;
 }
+.portfolio-grid p.card-link a {
+  color: var(--light-gray);
+  text-decoration: none;
+  font-size: 0.75rem;
+}
+.portfolio-grid p.card-link a::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  border-radius: 24px;
+}
+.portfolio-grid p.card-link a::after {
+  content: "";
+  display: inline-block;
+  background: url("../images/arrow-up-right-from-square.svg") no-repeat;
+  width: 0.5rem;
+  height: 0.5rem;
+  margin-left: 0.25rem;
+}
+
+/*
+.portfolio-grid a:last-child {
+  color: var(--light-gray);
+  text-decoration: none;
+  font-size: 0.8rem;
+}
+.portfolio-grid a.external::after {
+  content: "";
+  display: inline-block;
+  background: url("../images/arrow-up-right-from-square.svg") no-repeat;
+  width: 0.5rem;
+  height: 0.5rem;
+  margin-left: 0.25rem;
+}
+*/
 @media (hover: hover) {
   .portfolio-grid article:hover {
     transform: scale(1.06);
