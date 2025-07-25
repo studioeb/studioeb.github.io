@@ -65,6 +65,9 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>.
   --accent-medium: hsl(0, 66%, 61%);
   --accent-dark: hsl(0, 44%, 38%);
 
+  --border-radius-large: 20px;
+  --border-radius-small: 10px;
+
   scroll-behavior: smooth; /* Here for specificity's sake */
 }
 
@@ -152,7 +155,7 @@ main section {
   min-height: 180px;
   padding: 18px;
   background: linear-gradient(var(--navy-light), var(--navy-medium));
-  border-radius: 24px;
+  border-radius: var(--border-radius-large);
   border: 1px solid var(--navy);
   box-shadow: hsla(0, 0%, 0%, 0.1) 0 1px 3px, hsla(0, 0%, 0%, 0.12) 0 8px 8px;
   transition: box-shadow 0.2s, transform 0.2s, border 0.15s,
@@ -169,7 +172,7 @@ main section {
   margin-bottom: 10px;
 }
 .portfolio-grid img {
-  border-radius: 20px;
+  border-radius: calc(var(--border-radius-large) - 5px);
 }
 .portfolio-grid p.card-link a {
   color: var(--light-gray);
@@ -183,7 +186,7 @@ main section {
   bottom: 0;
   left: 0;
   right: 0;
-  border-radius: 24px;
+  border-radius: var(--border-radius-large);
 }
 .portfolio-grid p.card-link a::after {
   content: "";
@@ -194,22 +197,7 @@ main section {
   margin-left: 0.25rem;
 }
 
-/*
-.portfolio-grid a:last-child {
-  color: var(--light-gray);
-  text-decoration: none;
-  font-size: 0.8rem;
-}
-.portfolio-grid a.external::after {
-  content: "";
-  display: inline-block;
-  background: url("../images/arrow-up-right-from-square.svg") no-repeat;
-  width: 0.5rem;
-  height: 0.5rem;
-  margin-left: 0.25rem;
-}
-*/
-@media (hover: hover) {
+@media (hover: hover) and (prefers-reduced-motion: no-preference) {
   .portfolio-grid article:hover {
     transform: scale(1.06);
     box-shadow: var(--accent) 0 2px 10px;

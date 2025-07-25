@@ -27,7 +27,7 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>.
   flex-flow: column;
   position: fixed;
   top: 0;
-  bottom: 0;
+  bottom: env(safe-area-inset-bottom, 0);
   overflow: auto;
   z-index: 1; /* Keep sidebar on top of content */
   align-items: stretch;
@@ -149,6 +149,11 @@ ID is used here to increase specificity */
 }
 .sidebar.sidebar-animated {
   transition: left 0.3s;
+}
+@media (prefers-reduced-motion) {
+  .sidebar.sidebar-animated {
+    transition: none;
+  }
 }
 @media (max-width: 768px) {
   .header-desktop {
